@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patients Won't Spend $15,000 With a Clinic They Don't Trust, and Most Clinics Have No System to Build It. | Hair Practice Insider</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-muted: #5a5a5a;
+    --ink-faint: #9a9a9a;
+    --cream: #faf8f4;
+    --paper: #ffffff;
+    --rule: #e2ddd6;
+    --accent: #b5432a;
+    --accent-light: #f5ede9;
+    --blue-accent: #1d4ed8;
+    --highlight: #fef9c3;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* TOP BAR */
+  .topbar {
+    background: var(--ink);
+    color: #fff;
+    text-align: center;
+    padding: 9px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* MASTHEAD */
+  .masthead {
+    background: var(--paper);
+    border-bottom: 2px solid var(--ink);
+    padding: 18px 20px 14px;
+    text-align: center;
+  }
+  .masthead-category {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 6px;
+  }
+  .masthead-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--ink);
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+  .masthead-logo span { color: var(--accent); }
+  .masthead-tagline {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 1px;
+    margin-top: 5px;
+  }
+
+  /* NAV */
+  .nav {
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    overflow-x: auto;
+  }
+  .nav a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-decoration: none;
+    padding: 12px 0;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .nav a:hover, .nav a.active { color: var(--ink); border-color: var(--ink); }
+
+  /* LAYOUT */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .article-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 60px;
+    padding: 50px 0 80px;
+  }
+
+  /* ARTICLE HEADER */
+  .article-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .article-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .article-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+  }
+
+  .article-deck {
+    font-family: 'Source Serif 4', serif;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink-muted);
+    line-height: 1.55;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+  .article-meta .author { color: var(--ink); font-weight: 500; }
+  .article-meta .dot { color: var(--rule); }
+
+  /* HERO IMAGE PLACEHOLDER */
+  .hero-image {
+    width: 100%;
+    aspect-ratio: 16/7;
+    background: linear-gradient(135deg, #0d1f35 0%, #1a3a5c 60%, #0d2d4a 100%);
+    border-radius: 4px;
+    margin-bottom: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.03) 39px, rgba(255,255,255,0.03) 40px),
+                      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.03) 39px, rgba(255,255,255,0.03) 40px);
+  }
+  .hero-stat-row {
+    display: flex;
+    gap: 48px;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+  .hero-divider { width: 1px; background: rgba(255,255,255,0.12); }
+  .hero-caption {
+    position: relative;
+    z-index: 2;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 20px;
+  }
+
+  /* ARTICLE BODY */
+  .article-body p {
+    margin-bottom: 22px;
+    color: var(--ink);
+  }
+  .article-body p:first-child::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 900;
+    float: left;
+    line-height: 0.8;
+    margin: 6px 10px 0 0;
+    color: var(--ink);
+  }
+
+  .article-body h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 42px 0 16px;
+    line-height: 1.25;
+  }
+
+  .article-body h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin: 32px 0 12px;
+  }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    margin: 36px 0;
+    padding: 28px 32px;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 4px 4px 0;
+  }
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.4;
+    margin: 0 !important;
+  }
+  .pull-quote cite {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    color: var(--ink-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 12px;
+  }
+
+  /* STEP BOX */
+  .step-box {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin: 36px 0;
+  }
+  .step-box-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .step-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    align-items: flex-start;
+  }
+  .step-item:last-child { margin-bottom: 0; }
+  .step-num {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+  .step-content strong {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .step-content span {
+    font-size: 15px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: var(--highlight);
+    border: 1px solid #f0e068;
+    border-radius: 4px;
+    padding: 20px 24px;
+    margin: 28px 0;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .highlight-box strong { color: var(--ink); }
+
+  /* RESULT CARDS */
+  .result-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+  .result-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 20px;
+  }
+  .result-card .number {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .result-card .number span { color: var(--accent); }
+  .result-card .desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  /* CTA BLOCK */
+  .cta-block {
+    background: var(--ink);
+    border-radius: 8px;
+    padding: 40px 44px;
+    margin: 44px 0;
+    text-align: center;
+  }
+  .cta-block .eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 12px;
+  }
+  .cta-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+  }
+  .cta-block p {
+    font-family: 'Source Serif 4', serif;
+    font-size: 16px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+    margin-bottom: 28px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 36px;
+    border-radius: 4px;
+    transition: opacity 0.2s, transform 0.15s;
+    cursor: pointer;
+    border: none;
+  }
+  .cta-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+  .cta-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    margin-top: 14px;
+  }
+
+  /* INLINE CTA (mid-article) */
+  .inline-cta {
+    border: 2px solid var(--ink);
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: var(--paper);
+  }
+  .inline-cta-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.25;
+  }
+  .inline-cta-text span {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--ink-muted);
+    margin-top: 4px;
+  }
+  .cta-btn-outline {
+    flex-shrink: 0;
+    background: var(--ink);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    padding: 13px 24px;
+    border-radius: 4px;
+    white-space: nowrap;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+  }
+  .cta-btn-outline:hover { opacity: 0.85; }
+
+  /* SIDEBAR */
+  .sidebar { padding-top: 0; }
+  .sidebar-widget {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    margin-bottom: 28px;
+    overflow: hidden;
+  }
+  .widget-header {
+    background: var(--ink);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 12px 18px;
+  }
+  .widget-body { padding: 20px 18px; }
+  .sidebar-cta {
+    background: var(--accent);
+    border-radius: 4px;
+    padding: 28px 20px;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .sidebar-cta h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .sidebar-cta p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+  .sidebar-btn {
+    display: inline-block;
+    background: #fff;
+    color: var(--accent);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+  }
+  .sidebar-btn:hover { opacity: 0.9; }
+  .sidebar-stat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .sidebar-stat:last-child { border-bottom: none; padding-bottom: 0; }
+  .sidebar-stat .s-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    min-width: 68px;
+    max-width: 68px;
+    flex-shrink: 0;
+    line-height: 1.2;
+  }
+  .sidebar-stat .s-num em { color: var(--accent); font-style: normal; }
+  .sidebar-stat .s-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--ink-muted);
+    line-height: 1.4;
+    flex: 1;
+    min-width: 0;
+  }
+  .related-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .related-item:last-child { border-bottom: none; }
+  .related-item a {
+    font-family: 'Source Serif 4', serif;
+    font-size: 15px;
+    color: var(--ink);
+    text-decoration: none;
+    line-height: 1.4;
+    display: block;
+  }
+  .related-item a:hover { color: var(--accent); }
+  .related-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 15px;
+    color: var(--ink-muted);
+    line-height: 1.4;
+    display: block;
+    font-style: italic;
+  }
+  .related-item .r-cat {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  /* DISCLAIMER */
+  .disclaimer {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    border-top: 1px solid var(--rule);
+    padding-top: 16px;
+    margin-top: 40px;
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.5);
+    padding: 32px 20px;
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  footer strong { color: #fff; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .article-header { animation: fadeUp 0.6s ease both; }
+  .article-body { animation: fadeUp 0.6s ease 0.1s both; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+
+    /* Layout */
+    .article-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+      padding: 32px 0 60px;
+    }
+    .container { padding: 0 16px; }
+
+    /* Masthead */
+    .masthead { padding: 14px 16px 12px; }
+    .masthead-logo { font-size: 22px; }
+    .masthead-tagline { font-size: 11px; }
+
+    /* Nav — horizontal scroll, no wrapping */
+    .nav {
+      gap: 0;
+      padding: 0;
+      justify-content: flex-start;
+    }
+    .nav a {
+      font-size: 11px;
+      padding: 12px 14px;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    /* Article header */
+    .article-label { margin-bottom: 12px; }
+    .article-headline {
+      font-size: 26px;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .article-deck { font-size: 15px; }
+    .article-meta { flex-wrap: wrap; gap: 8px; font-size: 12px; }
+
+    /* Hero image */
+    .article-grid figure img { height: 220px !important; }
+
+    /* Body text */
+    .article-body { font-size: 16px; }
+    .article-body h2 { font-size: 22px; margin: 32px 0 12px; }
+    .article-body p:first-child::first-letter {
+      font-size: 52px;
+      margin: 4px 8px 0 0;
+    }
+
+    /* Pull quote */
+    .pull-quote { padding: 20px 20px; margin: 28px 0; }
+    .pull-quote p { font-size: 18px; }
+
+    /* Step box */
+    .step-box { padding: 20px 18px; margin: 28px 0; }
+    .step-item { gap: 12px; margin-bottom: 18px; }
+    .step-content strong { font-size: 14px; }
+    .step-content span { font-size: 14px; }
+
+    /* Highlight box */
+    .highlight-box { font-size: 15px; padding: 16px 18px; }
+
+    /* Result cards — 2 columns on mobile */
+    .result-cards {
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .result-card .number { font-size: 28px; }
+    .result-card .desc { font-size: 12px; }
+
+    /* Inline CTA */
+    .inline-cta {
+      flex-direction: column;
+      text-align: center;
+      padding: 22px 20px;
+      gap: 16px;
+    }
+    .inline-cta-text { font-size: 17px; }
+    .cta-btn-outline { width: 100%; text-align: center; padding: 14px 20px; }
+
+    /* CTA block */
+    .cta-block { padding: 28px 20px; margin: 36px 0; }
+    .cta-block h3 { font-size: 22px; }
+    .cta-block p { font-size: 15px; }
+    .cta-btn { padding: 15px 28px; font-size: 13px; }
+
+    /* Sidebar — stack below article, remove top padding */
+    .sidebar { padding-top: 0; border-top: 2px solid var(--rule); margin-top: 40px; }
+    .sidebar-cta { padding: 22px 16px; }
+    .sidebar-cta h4 { font-size: 18px; }
+
+    /* Sidebar stats */
+    .sidebar-stat .s-num { font-size: 17px; min-width: 56px; max-width: 56px; }
+    .sidebar-stat .s-desc { font-size: 11px; }
+
+    /* Widget */
+    .widget-body { padding: 16px 14px; }
+    .widget-body div { font-size: 12px !important; }
+  }
+
+  @media (max-width: 420px) {
+    .article-headline { font-size: 22px; }
+    .result-cards { grid-template-columns: 1fr; }
+    .masthead-logo { font-size: 19px; }
+  }
+
+  /* MODAL OVERLAY */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 26, 26, 0.72);
+    backdrop-filter: blur(3px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.open { display: flex; }
+
+  .modal {
+    background: var(--paper);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 560px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.28);
+    animation: modalIn 0.25s ease both;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(16px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .modal-header {
+    background: var(--ink);
+    padding: 28px 32px 24px;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+  }
+  .modal-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .modal-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+    margin: 0;
+  }
+  .modal-header p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.4);
+    font-size: 22px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px 6px;
+    border-radius: 4px;
+    transition: color 0.15s, background 0.15s;
+  }
+  .modal-close:hover { color: #fff; background: rgba(255,255,255,0.1); }
+
+  .modal-body { padding: 28px 32px 32px; }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .form-group {
+    margin-bottom: 16px;
+  }
+  .form-group label {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 6px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    background: var(--cream);
+    border: 1.5px solid var(--rule);
+    border-radius: 4px;
+    padding: 11px 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    -webkit-appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--ink);
+    box-shadow: 0 0 0 3px rgba(26,26,26,0.08);
+    background: var(--paper);
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: var(--ink-faint); }
+  .form-group textarea { resize: vertical; min-height: 88px; line-height: 1.5; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 16px 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .form-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+  .form-submit:active { transform: translateY(0); }
+
+  .form-disclaimer {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: var(--ink-faint);
+    text-align: center;
+    margin-top: 12px;
+    line-height: 1.5;
+  }
+
+  /* SUCCESS STATE */
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .form-success .success-icon {
+    width: 56px;
+    height: 56px;
+    background: #e6f4ea;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 24px;
+  }
+  .form-success h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .form-success p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 520px) {
+    /* Modal container */
+    .modal-overlay { padding: 0; align-items: flex-end; }
+    .modal {
+      border-radius: 16px 16px 0 0;
+      max-height: 95vh;
+    }
+
+    /* Modal header */
+    .modal-header { padding: 20px 18px 18px; }
+    .modal-header h2 { font-size: 19px; line-height: 1.25; }
+    .modal-header p { font-size: 13px; }
+    .modal-eyebrow { font-size: 10px; }
+
+    /* Modal body */
+    .modal-body { padding: 20px 18px 24px; }
+
+    /* All form rows stack to single column */
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+
+    /* Form fields */
+    .form-group { margin-bottom: 14px; }
+    .form-group label { font-size: 11px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea { font-size: 16px; padding: 12px 13px; }
+
+    /* Submit button */
+    .form-submit { font-size: 14px; padding: 15px 20px; }
+
+    /* Disclaimer */
+    .form-disclaimer { font-size: 11px; }
+
+    /* Success state */
+    .form-success { padding: 30px 16px; }
+    .form-success h3 { font-size: 20px; }
+    .form-success p { font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">Hair Practice Insider &nbsp;·&nbsp; Business &amp; Growth Intelligence for Clinic Owners</div>
+
+<div class="masthead">
+  <div class="masthead-category">Est. 2019</div>
+  <div class="masthead-logo">Hair Practice <span>Insider</span></div>
+  <div class="masthead-tagline">Independent reporting for hair restoration clinic owners &amp; practice managers</div>
+</div>
+
+<nav class="nav">
+  <a href="#article-top" class="active">The Problem</a>
+  <a href="#trust-problem">Why Patients Don't Trust</a>
+  <a href="#proof-story">Real Clinic Story</a>
+  <a href="#workshop-method">The Workshop Method</a>
+  <a href="#results">Results</a>
+  <a href="#free-workshop">Get Your Free Workshop</a>
+</nav>
+
+<div class="container">
+  <div class="article-grid">
+
+    <!-- MAIN ARTICLE -->
+    <main>
+      <div id="article-top" class="article-header">
+        <div class="article-label">Patient Acquisition</div>
+
+        <h1 class="article-headline">Patients Won't Spend $15,000 With a Clinic They Don't Trust, and Most Clinics Have No System to Build It.</h1>
+
+        <p class="article-deck">Right now a patient is deciding between you and a clinic in Turkey. They're not choosing on skill. They can't tell the difference. They're choosing on trust. And if you have no system to build it, you're losing that patient before they ever walk through your door.</p>
+
+        <div class="article-meta">
+          <span class="author">Staff Writer, Hair Practice Insider</span>
+          <span class="dot">·</span>
+          <span>March 2026</span>
+          <span class="dot">·</span>
+          <span>9 min read</span>
+        </div>
+      </div>
+
+      <figure style="margin-bottom:36px;">
+        <img src="https://www.novahairtransplantnyc.com/wp-content/uploads/2025/03/Hair-Transplant-NYC-114-650x433.png" alt="Hair transplant consultation" style="width:100%;height:380px;object-fit:cover;display:block;border-radius:6px;">
+      </figure>
+
+      <div class="article-body">
+
+        <p>Your patient has been researching this for months before they ever find you. They've read Reddit threads about hairlines carved at the wrong angle. They've watched news segments about men in psychological distress after unqualified technicians destroyed their scalps. They've seen the social media screenshots from guys who flew to Turkey for $2,500 and came home to a result they'll spend years trying to correct. By the time they click your ad, they're not curious. They're suspicious.</p>
+
+        <p>That suspicion is not about you personally. It's about your industry. And it lands in your consultation room every single day.</p>
+
+        <h2 id="trust-problem">Why Your Patients Arrive Scared Before You Say a Word</h2>
+
+        <p>The hair transplant industry has a trust problem that you did not create. Right now, according to the Turkish Hair Transplant Industry Association's own president, 90 percent of the sector operates off the books. Corrective and repair surgeries surged 166 percent in a single year. These aren't fringe statistics. They reflect a wave of genuinely damaged patients who are now the loudest voices in the forums and Reddit threads your prospective patients read every night.</p>
+
+        <p>"So many clinics are getting away with awful work by untrained people and leaving men thinking their lives are over." That was a direct quote in The Times UK. Not from a disgruntled outlier. From a pattern that has become normalized.</p>
+
+        <p>Your prospective patient has read all of it. They arrive at your consultation carrying that weight. They sit across from you, they ask good questions, they seem engaged. And somewhere in their head they're running a question they can't ask out loud: are you one of the real ones, or are you one of the ones they warn about?</p>
+
+        <p>Every clinic has a professional website. Every clinic has five-star reviews. Every clinic has before-and-after photos. None of that distinguishes you from the bad ones in the mind of someone who has already seen how easy it is to fake. "Being the best surgeon in town is no longer enough," wrote one marketing firm that works specifically in hair restoration. "Skepticism is high."</p>
+
+        <p>When trust is absent, patients fall back on the only comparison they can make: price. Not because they're cheap. Because when they can't feel the difference between you and a factory-style clinic, the number on the screen is all they have. "Bro just go to Turkey. You'll be fine." That's the advice circulating in the forums. And some of your prospective patients are taking it.</p>
+
+        <p>The ones who stay don't automatically book either. They want to trust you. But trust doesn't transfer through a phone call from your coordinator or a well-designed landing page. It takes time. It takes direct exposure to your thinking. It takes watching you answer a hard question honestly in real time. None of that happens in a standard consultation. So they say they'll think about it. And you never hear from them again.</p>
+
+        <div class="highlight-box">
+          <strong>What this costs you every week:</strong> "If you're seeing 10 consults a week and booking 5 surgeries… that's $25,000 every single week literally walking out the door." Catherine Maley, Practice Growth Consultant. At a close rate of 35 percent instead of 75, that same number of leads produces a completely different practice.
+        </div>
+
+        <p>This is not a lead problem. It's not a price problem. It's a trust problem. And the usual fixes don't touch it.</p>
+
+        <p>More ad spend doesn't fix it. A better follow-up script doesn't fix it. A new marketing agency definitely doesn't fix it. The only thing that fixes a trust deficit is a direct, human, face-to-face experience of who you actually are as a surgeon and a person. That's what patients need before they can commit to something this permanent and this personal. And for most clinics, nothing in their patient acquisition process provides it.</p>
+
+        <h2 id="proof-story">What Happened When One Clinic Stopped Fighting the Trust Problem and Started Solving It</h2>
+
+        <figure style="margin:0 0 28px 0;">
+          <img src="https://cdn.aarp.net/content/dam/aarpe/en/home/health/conditions-treatments/choose-a-surgeon-doctor-surgeries/_jcr_content/root/container_main/container_body_main/container_body1/container_body_cf/container_image/articlecontentfragment/cfimage.coreimg.50.932.jpeg/content/dam/aarp/health/healthy-living/2017/08/1140-pick-the-right-surgeon-promo.jpg" alt="Doctor consulting with patient in clinic" style="width:100%;height:320px;object-fit:cover;display:block;border-radius:6px;">
+          <figcaption style="font-family:'DM Sans',sans-serif;font-size:12px;color:var(--ink-faint);margin-top:8px;font-style:italic;text-align:center;">A one-on-one consultation builds trust. A workshop builds it with ten people at once.</figcaption>
+        </figure>
+
+        <p>Dr. Marcus Webb runs a two-surgeon hair restoration clinic outside of Columbus, Ohio. His outcomes are genuinely strong. His existing patients refer him consistently. His Google reviews are solid and real. By every clinical measure, his practice is excellent.</p>
+
+        <p>His consultation close rate was stuck at 32 percent.</p>
+
+        <p>He tried the agency route twice. The first agency sent leads. Most of them ghosted. The second agency sent better leads and a more expensive dashboard. More of those ghosted too. He hired a patient coordinator who was specifically trained in healthcare sales conversion. She was good at her job. The close rate nudged up to 38 percent and plateaued. He ran a promotion offering a discounted consultation. The people who came in for the discount were not the patients he wanted to operate on.</p>
+
+        <p>In the meantime, he watched patients use his consultation to validate a decision they had already made to go abroad. He knew what the Turkish results looked like in two years. He had operated on several of the men who came back needing repair work. It didn't make the conversation easier.</p>
+
+        <p>A colleague mentioned the workshop idea at a conference. Dr. Webb's first reaction was honest: "I'm a surgeon. I'm not a presenter. I don't do sales events." The framing bothered him. He had spent his career building a practice around clinical credibility, not salesmanship. Hosting what sounded like a group sales pitch felt like the wrong direction.</p>
+
+        <p>What changed his mind was a different framing. This wasn't a sales event. It was an education event. He wouldn't be pitching procedures. He would be doing what he does in every consultation, answering questions, explaining the process, setting realistic expectations, showing real results. The only difference was doing it in front of a group of 12 people instead of one person at a time.</p>
+
+        <p>He agreed to try one. The materials, the script, the slide deck, and the ads were built for him before he walked in the room. His job was to present.</p>
+
+        <p>Twelve people attended. He spoke for about 50 minutes. He answered questions from the room. One patient asked about what happens when things go wrong. Dr. Webb answered it directly and honestly, describing exactly how complications are handled and what that process looks like. It was the kind of answer he gives in private consultations that rarely feel like enough in a one-on-one room.</p>
+
+        <p>In the group, something different happened. Several other attendees heard the answer and visibly relaxed. One woman said out loud: "That's the question I was too afraid to ask." The room laughed. Dr. Webb kept presenting.</p>
+
+        <p>Of the 12 attendees, 7 booked consultations or left deposits on the same day. For Dr. Webb, that was more than double his typical conversion rate from the same number of contacts. He was careful not to read too much into one event. But he ran another one three weeks later. The results were similar.</p>
+
+        <div class="pull-quote">
+          <p>"The thing that surprised me wasn't the numbers. It was that nobody felt sold to. One patient told me afterward it was the first time he felt like he was being taught, not pitched. That's what I'd been trying to create in every individual consultation for years."</p>
+          <cite>Dr. Marcus Webb, hair restoration surgeon, Columbus OH</cite>
+        </div>
+
+        <p>What Dr. Webb experienced in that room is not a sales technique. It's what happens when a group of skeptical, nervous people who distrust an entire industry watch a qualified surgeon answer hard questions honestly in public. The trust that takes weeks to build through individual follow-up calls forms in a single afternoon. That's the mechanism. And it's repeatable.</p>
+
+        <h2 id="workshop-method">How the Workshop Method Builds That Trust for Your Clinic, and Who Does the Work</h2>
+
+        <figure style="margin:0 0 28px 0;">
+          <img src="https://www.wichitachamber.org/clientuploads/blog/2017/05/DSC_0002.jpg" alt="Small group workshop presentation" style="width:100%;height:260px;object-fit:cover;border-radius:6px;display:block;">
+          <figcaption style="font-family:'DM Sans',sans-serif;font-size:12px;color:var(--ink-faint);margin-top:8px;font-style:italic;text-align:center;">10 to 15 people is the sweet spot. Small enough to feel personal. Large enough that trust builds across the group.</figcaption>
+        </figure>
+
+        <p>The Workshop Method is a done-for-you system built specifically for hair restoration clinic owners who are already running 8 to 10-hour procedure days. You do not design the event. You do not write the copy. You do not manage the ad account or build the presentation or figure out what to say when the room goes quiet. All of that is handled before you walk in the door. Your job is to show up and present.</p>
+
+        <p>Here is exactly what is built and delivered to you:</p>
+
+        <div class="step-box">
+          <div class="step-box-title">What We Build and Deliver Before Your First Workshop</div>
+
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <strong>We run your ads from start to finish</strong>
+              <span>We write the ad copy, design the creative, set up targeting for warm local prospects, and manage the campaign entirely. You don't log in to the ad account. We fill the room with typically 8 to 16 people who are already considering hair restoration, on roughly $300 in Facebook and Instagram spend. The campaign runs under your clinic's name.</span>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <strong>We build your branded slide presentation</strong>
+              <span>A professionally designed, clinic-branded slide deck covering the full patient journey. Why hair loss happens. What the restoration process looks like step by step. What realistic outcomes look like and how to evaluate them. You don't write a word of it. You present it exactly as designed.</span>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <strong>We write your word-for-word script</strong>
+              <span>You don't have to improvise. You don't have to sell. We write a complete, conversational script that guides you through every part of the presentation, including how to handle the hard questions that come up in every room. You read it. The room responds. That is the full scope of your role during the event.</span>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <strong>We design your patient handout and offer materials</strong>
+              <span>Printed take-home guides, patient worksheets, and same-day offer forms are produced for your event. Attendees leave with something tangible that carries your clinic's brand. The offer sheets are designed to make it easy for a patient who is ready to commit to do so before they leave the room.</span>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <strong>We run a live preparation call with you and your team</strong>
+              <span>Before the workshop, we walk through the entire event together. We review the script, run through the slide deck, answer every question, and make sure you are walking into that room with complete confidence in the format. Most clinic owners say one prep call is all it takes.</span>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-num">6</div>
+            <div class="step-content">
+              <strong>We provide follow-up sequences for attendees and no-shows</strong>
+              <span>Not every registrant shows up. Those who don't are still warm and still reachable. We provide email and SMS follow-up sequences for both attendees and no-shows, designed to keep the conversation going in the 24 to 48 hours after the event when intent is still high.</span>
+            </div>
+          </div>
+        </div>
+
+        <p>You show up. You read the script. You answer questions from the room. Everything else is handled.</p>
+
+        <div id="patient-acquisition" class="inline-cta">
+          <div class="inline-cta-text">
+            Want us to build your first workshop at no cost?
+            <span>Book a short call. We'll confirm your market, set a date, and get started building immediately.</span>
+          </div>
+          <button class="cta-btn-outline" onclick="openModal()">Claim Your Free Workshop</button>
+        </div>
+
+        <h2 id="results">What Clinics Running This System Are Reporting</h2>
+
+        <p>On roughly $300 in local Facebook and Instagram ads, clinics using this system are consistently filling rooms with 8 to 16 qualified local prospects. These are people who registered, confirmed, and chose to give up an evening to attend. The self-selection alone means the room is warmer than any cold lead list.</p>
+
+        <p>In many cases, around half of the room books a consultation or leaves a deposit on the same day. Results vary by market, by clinic, and by how closely the framework is followed. But the directional shift from a standard 30 to 40 percent cold consultation close rate to a workshop-driven outcome is significant enough that clinics running two events per month describe a meaningfully different pipeline within the first 60 days.</p>
+
+        <div class="result-cards">
+          <div class="result-card">
+            <div class="number">8–<span>16</span></div>
+            <div class="desc">Warm local prospects per workshop on roughly $300 in ads</div>
+          </div>
+          <div class="result-card">
+            <div class="number"><span>~50</span>%</div>
+            <div class="desc">Reported same-day booking rate in many cases when the format is followed</div>
+          </div>
+          <div class="result-card">
+            <div class="number"><span>~$300</span></div>
+            <div class="desc">Ad spend per event. We write, design, and manage everything.</div>
+          </div>
+          <div class="result-card">
+            <div class="number"><span>1</span> hr</div>
+            <div class="desc">Time the clinic owner spends presenting. We handle the rest.</div>
+          </div>
+          <div class="result-card">
+            <div class="number">5–<span>10</span></div>
+            <div class="desc">New booked patients per event reported by participating clinics</div>
+          </div>
+        </div>
+
+        <p>The system is repeatable. The same ads, the same deck, the same script, the same handout materials, run on the same rhythm every few weeks. The compounding effect on the consultation pipeline is what separates clinics running this consistently from those who tried it once.</p>
+
+        <div class="pull-quote">
+          <p>"The room does the work that no phone call ever could. By the time we got to the offer, I could see which patients had already decided. We were just giving them the paperwork."</p>
+          <cite>Practice manager, Southeast US hair restoration clinic</cite>
+        </div>
+
+        <h2 id="free-workshop">The First Workshop Costs You Nothing. Here Is Why We Make That Offer.</h2>
+
+        <p>We've heard the objection. You've been burned by a marketing agency before. You paid for leads and got impressions. You paid for a system and got a PDF. The last thing you need is another promise with a monthly retainer attached to it.</p>
+
+        <p>So we don't ask for that. The first workshop we build for your clinic is completely free of charge. You pay only the ad spend to fill the room, roughly $300. Everything else, the ads, the slide deck, the script, the handout materials, the prep call, the follow-up sequences, is built and delivered at no cost to you.</p>
+
+        <p>If the workshop runs and you see patients convert and you want to keep going, we continue working together. If for any reason it doesn't work for your clinic, you owe us nothing. No contract. No retainer. No invoice.</p>
+
+        <div class="highlight-box">
+          <strong>The offer in plain terms:</strong> We build everything. You host one workshop. If you see patients book on the day and want to continue, we keep building. If you don't want to continue, you don't. No fee, no contract, no pressure.
+        </div>
+
+        <p>We make this offer because the clinic owners who see the first workshop work become long-term partners. We'd rather prove the system in your market before asking for anything. That's the only way this makes sense for both sides.</p>
+
+        <p>One important note: we work with one clinic per market area. If we're already partnered with another clinic in your city, we can't take your business. That constraint is the whole reason market availability matters. Availability is confirmed on the strategy call.</p>
+
+        <div id="cta" class="cta-block">
+          <div class="eyebrow">First Workshop, Completely Free</div>
+          <h3>We Build Everything. You Show Up and Present.</h3>
+          <p>Book a free 20-minute call. We check availability in your market, confirm your clinic is a fit, and if it is, we start building your first workshop immediately at no cost.</p>
+          <button class="cta-btn" onclick="openModal()">Claim Your Free Workshop →</button>
+          <div class="cta-sub">One clinic per market. No fee until you see results and choose to continue.</div>
+        </div>
+
+        <div class="disclaimer">
+          <strong>Disclosure:</strong> This article contains sponsored content from The Workshop Method. Hair Practice Insider maintains editorial independence and only partners with services we believe are genuinely relevant to our readership. The clinic story in this article is illustrative and based on reported experiences. Results described reflect outcomes reported by participating clinics and are not guaranteed. Individual results will vary based on market, execution, and patient mix.
+        </div>
+
+      </div>
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-cta">
+        <h4>Your First Workshop Is Free</h4>
+        <p>Your patients don't distrust you. They distrust the industry. The workshop fixes that in a single afternoon. We build everything. You just show up.</p>
+        <button class="sidebar-btn" onclick="openModal()">Check Market Availability →</button>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-header">By The Numbers</div>
+        <div class="widget-body">
+          <div class="sidebar-stat">
+            <div class="s-num"><em>166</em>%</div>
+            <div class="s-desc">Surge in corrective surgeries in one year. Industry trust is at a historic low.</div>
+          </div>
+          <div class="sidebar-stat">
+            <div class="s-num"><em>90</em>%</div>
+            <div class="s-desc">Of the hair transplant sector operates off the books, per industry insiders.</div>
+          </div>
+          <div class="sidebar-stat">
+            <div class="s-num">~$<em>300</em></div>
+            <div class="s-desc">Ad spend to fill a room. We write, design, and manage the campaign.</div>
+          </div>
+          <div class="sidebar-stat">
+            <div class="s-num"><em>1</em> hr</div>
+            <div class="s-desc">Time you spend presenting. We handle everything else.</div>
+          </div>
+          <div class="sidebar-stat">
+            <div class="s-num">$<em>0</em></div>
+            <div class="s-desc">Cost for your first workshop. No fee unless you see results and choose to continue.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-header">We Build All of This For You</div>
+        <div class="widget-body">
+          <div style="font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--ink-muted); line-height: 1.8;">
+            <div style="display:flex;gap:8px;margin-bottom:6px;"><span style="color:var(--accent);font-weight:500;">✓</span> Facebook &amp; Instagram ads, written, designed, managed</div>
+            <div style="display:flex;gap:8px;margin-bottom:6px;"><span style="color:var(--accent);font-weight:500;">✓</span> Clinic-branded slideshow presentation</div>
+            <div style="display:flex;gap:8px;margin-bottom:6px;"><span style="color:var(--accent);font-weight:500;">✓</span> Word-for-word presenter script</div>
+            <div style="display:flex;gap:8px;margin-bottom:6px;"><span style="color:var(--accent);font-weight:500;">✓</span> Patient handout materials and offer sheets</div>
+            <div style="display:flex;gap:8px;margin-bottom:6px;"><span style="color:var(--accent);font-weight:500;">✓</span> Live preparation call with your team</div>
+            <div style="display:flex;gap:8px;margin-bottom:6px;"><span style="color:var(--accent);font-weight:500;">✓</span> Pre-event setup checklist</div>
+            <div style="display:flex;gap:8px;"><span style="color:var(--accent);font-weight:500;">✓</span> Follow-up sequences for attendees and no-shows</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="marketing"></div>
+      <div id="practice-ops"></div>
+      <div id="case-studies"></div>
+      <div id="industry-news"></div>
+
+    </aside>
+
+  </div>
+</div>
+
+<footer>
+  <strong>Hair Practice Insider</strong> &nbsp;·&nbsp; Independent business intelligence for hair restoration clinic owners &nbsp;·&nbsp; © 2026
+</footer>
+
+<!-- BOOKING FORM MODAL -->
+<div class="modal-overlay" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-eyebrow">First Workshop, No Charge</div>
+      <h2 id="modalTitle">Check Availability in Your Market</h2>
+      <p>We partner with one clinic per market area. Fill in your details and a specialist will confirm whether your market is open and walk you through exactly how the first workshop gets built and run for your clinic at no cost.</p>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+    </div>
+    <div class="modal-body">
+
+      <form id="bookingForm" action="https://formspree.io/f/xgopwnnq" method="POST" novalidate onsubmit="handleSubmit(event)">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name <span style="color:var(--accent)">*</span></label>
+            <input type="text" id="firstName" name="firstName" placeholder="Sarah" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name <span style="color:var(--accent)">*</span></label>
+            <input type="text" id="lastName" name="lastName" placeholder="Thompson" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="clinicName">Clinic / Practice Name <span style="color:var(--accent)">*</span></label>
+          <input type="text" id="clinicName" name="clinicName" placeholder="e.g. Restore Hair Clinic" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address <span style="color:var(--accent)">*</span></label>
+            <input type="email" id="email" name="email" placeholder="you@yourclinic.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number <span style="color:var(--accent)">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city">City / Location</label>
+            <input type="text" id="city" name="city" placeholder="e.g. Austin, TX">
+          </div>
+          <div class="form-group">
+            <label for="monthlyBudget">Monthly Ad Spend</label>
+            <select id="monthlyBudget" name="monthlyBudget">
+              <option value="" disabled selected>Select a range</option>
+              <option value="under-1k">Under $1,000</option>
+              <option value="1k-3k">$1,000 – $3,000</option>
+              <option value="3k-7k">$3,000 – $7,000</option>
+              <option value="7k-15k">$7,000 – $15,000</option>
+              <option value="15k+">$15,000+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="challenge">What's your biggest patient acquisition challenge right now?</label>
+          <textarea id="challenge" name="challenge" placeholder="e.g. High CPL from Meta ads, poor show rates on consultations, difficulty converting warm leads…"></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">Check My Market Availability →</button>
+
+        <p class="form-disclaimer">No fee. No contract. One clinic per market. A specialist will confirm availability within one business day and explain exactly what gets built for you. We never share your details.</p>
+
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">✓</div>
+        <h3>We'll be in touch shortly.</h3>
+        <p>A specialist will reach out within one business day to confirm whether your market is available and walk you through exactly what the first workshop build looks like for your clinic. Check your inbox and spam folder just in case.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function openModal() {
+    document.getElementById('bookingModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('bookingModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('bookingModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('bookingForm');
+    const inputs = form.querySelectorAll('[required]');
+    let valid = true;
+
+    inputs.forEach(function(input) {
+      input.style.borderColor = '';
+      if (!input.value.trim()) {
+        input.style.borderColor = '#b5432a';
+        valid = false;
+      }
+      if (input.type === 'email' && input.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
+        input.style.borderColor = '#b5432a';
+        valid = false;
+      }
+    });
+
+    if (!valid) return;
+
+    const btn = form.querySelector('.form-submit');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    const data = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response) {
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        btn.textContent = 'Something went wrong. Try again.';
+        btn.disabled = false;
+      }
+    }).catch(function() {
+      btn.textContent = 'Something went wrong. Try again.';
+      btn.disabled = false;
+    });
+  }
+
+  // Smooth scroll for nav anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href').slice(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
